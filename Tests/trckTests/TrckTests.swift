@@ -2,38 +2,31 @@ import XCTest
 import RxCocoa
 import RxSwift
 import RxTest
+import CoreLocation
 @testable import Trck
 
 class TrckTests: XCTestCase {
 
-  func testTrackingFunctionality() {
+  func testHalfMarathon() {
     let gpxString = loadGPX()
     let instance = TrckLocationManager.sharedInstance(true)
     instance.load(gpxString)
 
-    let scheduler = TestScheduler(initialClock: 0)
-    let trck = Trck(scheduler: scheduler)
-    trck.start()
-    
-    let xs = scheduler.createHotObservable([
-            next(150, 1),  // first argument is virtual time, second argument is element value
-            next(210, 2),
-            next(220, 3),
-            next(230, 4),
-            next(240, 5),
-            completed(300) // virtual time when completed is sent
-            ])
+    let scheduler = TestScheduler(initialClock: 300)
 
-    let res = scheduler.start {
-      xs.map { $0 * 2 } //Observable<Int64>.interval(100, scheduler: scheduler)
+    let trck = Trck(scheduler: scheduler)
+
+    let res = scheduler.start(disposed: 7502) {
+      trck.start()
     }
 
-    print(res.events)
     trck.stop()
+    let distance = res.events.last!.value.element!!.3
+    XCTAssertEqualWithAccuracy(distance, 20100.0, accuracy: 100.0)
   }
 
   static var allTests = [
-    ("testTrackingFunctionality", testTrackingFunctionality)
+    ("testHalfMarathon", testHalfMarathon)
   ]
 
   private func loadGPX()->NSString {
@@ -41,4 +34,5 @@ class TrckTests: XCTestCase {
     let path = "\(fileManager.currentDirectoryPath)/Tests/trckTests/gpx/"
     return try! NSString(contentsOfFile: "\(path)/Stirling_Marathon_Rough.gpx", encoding: 4)
   }
+
 }

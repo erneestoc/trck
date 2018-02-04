@@ -4,8 +4,6 @@ import RxSwift
 class Trck {
   typealias TrackingData = (location:CLLocation, speed:Double, time:Int, distance:Double)
 
-  private var bag = DisposeBag()
-
   private let setup:TrckSetup
   private var time = 0
   private var distance = 0.0
@@ -29,15 +27,14 @@ class Trck {
     self.setup = TrckSetup()
   }
 
-  public func start() {
-    Observable<Int>.interval(1.0, scheduler: scheduler)
+  public func start()->Observable<TrackingData?> {
+    return Observable<Int>.interval(1.0, scheduler: scheduler)
       .map(updateTimeAndGetCoordinate)
       .map(calculateMetrics)
-      .subscribe(tick).disposed(by: bag)
   }
 
   public func stop() {
-    bag = DisposeBag()
+    
   }
 
   private func updateTimeAndGetCoordinate(_ ticksSinceLastStart:Int)->CLLocation? {
@@ -69,6 +66,6 @@ class Trck {
   }
 
   private func tick(_ time:Event<TrackingData?>) {
-    print(time)
+    // print(time)
   }
 }

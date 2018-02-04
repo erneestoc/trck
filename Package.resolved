@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "e479d0029db0575e03e3c092e1c9724b9410eab7",
+          "version": "4.1.1"
+        }
+      },
+      {
+        "package": "SWXMLHash",
+        "repositoryURL": "https://github.com/drmohundro/SWXMLHash.git",
+        "state": {
+          "branch": null,
+          "revision": "4e7f5af6331735d39fc357b2c71c3bb15af97c8f",
+          "version": "4.3.6"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,4 +1,8 @@
+enum TrckUnitSystem {
+  case metric
+  case royal
+}
 
 struct TrckSetup {
-  let i = 0
+  let unitSystem:TrckUnitSystem = .metric
 }

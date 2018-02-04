@@ -38,7 +38,7 @@ class Trck {
       .map(checkVoiceFeedback)
   }
 
-  private func updateTimeAndGetCoordinate(_ ticksSinceLastStart:Int)->CLLocation? {
+  private func updateTimeAndGetCoordinate(_ ticksSinceLastStart:Int) -> CLLocation? {
     time += 1
     if time % secondsToRecalculate == 0 {
       return locationManager.currentLocation(time)
@@ -47,7 +47,7 @@ class Trck {
     }
   }
 
-  private func calculateMetrics(currentLocation:CLLocation?)->TrackingData? {
+  private func calculateMetrics(currentLocation:CLLocation?) -> TrackingData? {
     var data:TrackingData?
     if let currentLocation = currentLocation {
       if let lastLocation = lastLocation {
@@ -66,7 +66,7 @@ class Trck {
     return locationQueue.last
   }
 
-  private func checkVoiceFeedback(trackingData:TrackingData?)->(trackingData:TrackingData?, feedback:String?) {
+  private func checkVoiceFeedback(trackingData:TrackingData?) -> (TrackingData?, String?) {
     guard let trackingData = trackingData else { return (nil, nil) }
     return (trackingData, feedback.feedbackFor(distance: trackingData.3, time:trackingData.2))
   }

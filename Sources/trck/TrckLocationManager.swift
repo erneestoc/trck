@@ -3,7 +3,7 @@ import SWXMLHash
 
 class TrckLocationManager:NSObject {
 
-  typealias TrckLocation = (Int)->CLLocation?
+  typealias TrckLocation = (Int) -> CLLocation?
   private var locationLambda:TrckLocation?
   private var date = Date()
   init(_ fakeData:Bool) {
@@ -11,11 +11,9 @@ class TrckLocationManager:NSObject {
     if fakeData {
       locationLambda = { [unowned self] time in
         let date1 = self.date.addingTimeInterval(Double(time))
-        for (date2, lat, lon) in self.fakeTrack {
-          if date2 >= date1 {
-            self.current = CLLocation(latitude: lat, longitude: lon)
-            return self.current
-          }
+        for (date2, lat, lon) in self.fakeTrack where date2 >= date1 {
+          self.current = CLLocation(latitude: lat, longitude: lon)
+          return self.current
         }
         return self.current
       }
@@ -28,7 +26,7 @@ class TrckLocationManager:NSObject {
 
   private static var instance:TrckLocationManager?
 
-  public class func sharedInstance(_ fakeData:Bool = false)->TrckLocationManager {
+  public class func sharedInstance(_ fakeData:Bool = false) -> TrckLocationManager {
     if let instance = instance {
       return instance
     } else {
@@ -39,7 +37,7 @@ class TrckLocationManager:NSObject {
 
   private var current:CLLocation?
 
-  public func currentLocation(_ time:Int)->CLLocation? {
+  public func currentLocation(_ time:Int) -> CLLocation? {
     return locationLambda!(time)
   }
 
@@ -48,10 +46,10 @@ class TrckLocationManager:NSObject {
   public func load(_ data:NSString) {
     let gpx = SWXMLHash.parse(data as String)["gpx"]
 
-    let xml = try! gpx["trk"]["trkseg"]
+    let xml = gpx["trk"]["trkseg"]
 
-    xml.all.map { [unowned self] trackSegment in
-      try! trackSegment["trkpt"].all.map { [unowned self] trackPoint in
+    _ = xml.all.map { [unowned self] trackSegment in
+      trackSegment["trkpt"].all.map { [unowned self] trackPoint in
         let element = trackPoint.element!
         let lat = Double(element.attribute(by: "lat")!.text)!
         let lon = Double(element.attribute(by: "lon")!.text)!
@@ -67,8 +65,7 @@ class TrckLocationManager:NSObject {
 }
 
 extension TrckLocationManager:CLLocationManagerDelegate {
-  func locationManager(_ manager: CLLocationManager, 
-           didUpdateLocations locations: [CLLocation]) {
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
-  } 
+  }
 }

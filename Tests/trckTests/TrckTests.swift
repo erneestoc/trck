@@ -1,5 +1,4 @@
 import XCTest
-import RxCocoa
 import RxSwift
 import RxTest
 import CoreLocation
@@ -20,8 +19,7 @@ class TrckTests: XCTestCase {
       trck.start()
     }
 
-    trck.stop()
-    let distance = res.events.last!.value.element!!.3
+    let distance = res.events.last!.value.element!.0!.3
     XCTAssertEqualWithAccuracy(distance, 20100.0, accuracy: 100.0)
   }
 

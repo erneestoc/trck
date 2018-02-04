@@ -1,4 +1,5 @@
 import XCTest
+import RxCocoa
 import RxSwift
 import RxTest
 @testable import Trck

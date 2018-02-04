@@ -1,5 +1,5 @@
 import XCTest
-@testable import trck
+@testable import Trck
 
 class TrckLocationManagerTests: XCTestCase {
   func testSingleton() {

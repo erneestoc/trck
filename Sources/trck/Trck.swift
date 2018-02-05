@@ -23,12 +23,12 @@ class Trck {
   init(setup:TrckSetup, scheduler: SchedulerType = MainScheduler.instance) {
     self.scheduler = scheduler
     self.setup = setup
-    self.feedback = TrckFeedback()
+    self.feedback = TrckFeedback(setup: self.setup)
   }
   init(scheduler: SchedulerType = MainScheduler.instance) {
     self.scheduler = scheduler
     self.setup = TrckSetup()
-    self.feedback = TrckFeedback()
+    self.feedback = TrckFeedback(setup: self.setup)
   }
 
   public func start()->Observable<(TrackingData?, String?)> {

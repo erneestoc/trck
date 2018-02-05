@@ -4,7 +4,8 @@ import XCTest
 class TrckFeedbackEnglishTests: XCTestCase {
 
   func testVoiceFeedbackForKilometers() {
-    let feedback = TrckFeedback()
+    let setup = TrckSetup(unitSystem: .metric, voiceFeedback: .regular, halfsUnits: 2)
+    let feedback = TrckFeedback(setup: setup)
     let underKM = feedback.feedbackFor(distance: 900.0, time: 60 * 4)
     XCTAssertEqual(underKM, nil)
     let overKM = feedback.feedbackFor(distance: 1001.0, time: 60 * 5)
@@ -21,7 +22,8 @@ class TrckFeedbackEnglishTests: XCTestCase {
   }
 
   func testVoiceFeedbackForMiles() {
-    let feedback = TrckFeedback()
+    let setup = TrckSetup(unitSystem: .royal, voiceFeedback: .regular, halfsUnits: 2)
+    let feedback = TrckFeedback(setup: setup)
     let underMile = feedback.feedbackFor(distance: 1500.0, time: 60 * 4)
     XCTAssertEqual(underMile, nil)
     let overMile = feedback.feedbackFor(distance: 1610.0, time: 60 * 5)
@@ -38,7 +40,8 @@ class TrckFeedbackEnglishTests: XCTestCase {
   }
 
   func testHalfKilometerConfig() {
-    let feedback = TrckFeedback()
+    let setup = TrckSetup(unitSystem: .metric, voiceFeedback: .regular, halfsUnits: 1)
+    let feedback = TrckFeedback(setup: setup)
     let underKM = feedback.feedbackFor(distance: 490.0, time: 60 * 4)
     XCTAssertEqual(underKM, nil)
     let overKM = feedback.feedbackFor(distance: 501.0, time: 60 * 5)
@@ -55,7 +58,8 @@ class TrckFeedbackEnglishTests: XCTestCase {
   }
 
   func testHalfMileConfig() {
-    let feedback = TrckFeedback()
+    let setup = TrckSetup(unitSystem: .royal, voiceFeedback: .regular, halfsUnits: 1)
+    let feedback = TrckFeedback(setup: setup)
     let underKM = feedback.feedbackFor(distance: 803.0, time: 60 * 4)
     XCTAssertEqual(underKM, nil)
     let overKM = feedback.feedbackFor(distance: 805.0, time: 60 * 5)

@@ -38,6 +38,7 @@ func convertDistanceToDistanceTuple(_ distance:Double, unitSystem:TrckUnitSystem
 
 func convertTimeAndDistanceToPaceTuple(_ pace:Double,
                                        unitSystem:TrckUnitSystem) -> PaceTuple {
+  guard pace != 0.0 else {return (0, 0)}
   let conversion = (unitSystem == .metric ? 1000.0 : 1609.0)
   let averagePaceFloat = pace * (conversion / 60.0)
   let firstUnit = Int(averagePaceFloat)

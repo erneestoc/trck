@@ -142,18 +142,22 @@ class TrckTypesAndHelpersTests: XCTestCase {
   }
 
   func testPaceOnZeroKMS() {
-    let time = 0
-    let distance = 0.0
-    let tuple = convertTimeAndDistanceToPaceTuple(Double(time) / distance, unitSystem: .metric)
+    let tuple = convertTimeAndDistanceToPaceTuple(0.0, unitSystem: .metric)
     XCTAssertEqual(tuple.0, 0)
     XCTAssertEqual(tuple.1, 0)
   }
 
   func testPaceOnZeroMILES() {
-    let time = 0
-    let distance = 0.0
-    let tuple = convertTimeAndDistanceToPaceTuple(Double(time) / distance, unitSystem: .royal)
+    let tuple = convertTimeAndDistanceToPaceTuple(0.0, unitSystem: .royal)
     XCTAssertEqual(tuple.0, 0)
+    XCTAssertEqual(tuple.1, 0)
+  }
+
+  func testPaceOnePerMile() {
+    let time = 60
+    let distance = 1609.0
+    let tuple = convertTimeAndDistanceToPaceTuple(Double(time) / distance, unitSystem: .royal)
+    XCTAssertEqual(tuple.0, 1)
     XCTAssertEqual(tuple.1, 0)
   }
 

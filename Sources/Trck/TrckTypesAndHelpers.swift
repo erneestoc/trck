@@ -26,13 +26,12 @@ func convertTimeToTimeTuple(_ time:Int) -> TimeTuple {
 func convertDistanceToDistanceTuple(_ distance:Double, unitSystem:TrckUnitSystem) -> DistanceTuple {
   let conversion = (unitSystem == .metric ? 1000.0 : 1609.0)
   if distance >= conversion {
-    let _mainUnit = distance / conversion
-    let mainUnit = Int(_mainUnit)
-    let enMiles = distance.remainder(dividingBy: conversion)
-    let _secondaryUnit = Int(enMiles / (conversion / 100.0))
-    return (mainUnit, _secondaryUnit)
+    let unit1 = Int(distance / conversion)
+    let remainder = distance.truncatingRemainder(dividingBy: conversion)
+    let _secondaryUnit = Int((remainder * 100.0) / conversion)
+    return (unit1, _secondaryUnit)
   } else {
-    return (0, Int(distance / (conversion / 100)))
+    return (0, Int((distance * 100.0) / conversion))
   }
 }
 

@@ -135,7 +135,7 @@ class TrckTypesAndHelpersTests: XCTestCase {
   }
 
   func testDistanceConverterTwoDotFiveMiles() {
-    let distance = 3298.45
+    let distance = 3299.0
     let tuple = convertDistanceToDistanceTuple(distance, unitSystem: .royal)
     XCTAssertEqual(tuple.0, 2)
     XCTAssertEqual(tuple.1, 5)
@@ -158,6 +158,30 @@ class TrckTypesAndHelpersTests: XCTestCase {
     let distance = 1609.0
     let tuple = convertTimeAndDistanceToPaceTuple(Double(time) / distance, unitSystem: .royal)
     XCTAssertEqual(tuple.0, 1)
+    XCTAssertEqual(tuple.1, 0)
+  }
+
+  func testPaceOnePerKm() {
+    let time = 60
+    let distance = 1000.0
+    let tuple = convertTimeAndDistanceToPaceTuple(Double(time) / distance, unitSystem: .metric)
+    XCTAssertEqual(tuple.0, 1)
+    XCTAssertEqual(tuple.1, 0)
+  }
+
+  func testPaceFivePerMile() {
+    let time = (60 * 5)
+    let distance = 1609.0
+    let tuple = convertTimeAndDistanceToPaceTuple(Double(time) / distance, unitSystem: .royal)
+    XCTAssertEqual(tuple.0, 5)
+    XCTAssertEqual(tuple.1, 0)
+  }
+
+  func testPaceFivePerKm() {
+    let time = (60 * 5)
+    let distance = 1000.0
+    let tuple = convertTimeAndDistanceToPaceTuple(Double(time) / distance, unitSystem: .metric)
+    XCTAssertEqual(tuple.0, 5)
     XCTAssertEqual(tuple.1, 0)
   }
 

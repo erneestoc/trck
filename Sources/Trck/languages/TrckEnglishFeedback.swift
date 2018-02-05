@@ -24,13 +24,22 @@ extension TrckEnglishFeedback: TrckFeedbackProtocol {
       return "distance, \(distanceTuple.0), \(unitSystemString), completed"
     } else if distanceTuple.0 == 0 && distanceTuple.1 != 0 {
       let unitSystemString = pluralUnitSystemString(setup.unitSystem)
-      return "distance, point, \(distanceTuple.1), \(unitSystemString), completed"
+      return "distance, point, \(secondUnit(distanceTuple.1)), \(unitSystemString), completed"
     } else if distanceTuple.0 != 0 && distanceTuple.1 == 0 {
       let unitSystemString = pluralUnitSystemString(setup.unitSystem)
       return "distance, \(distanceTuple.0), \(unitSystemString), completed"
     } else {
       let unitSystemString = pluralUnitSystemString(setup.unitSystem)
-      return "distance, \(distanceTuple.0), point, \(distanceTuple.1), \(unitSystemString), completed"
+      let string1 = "distance, \(distanceTuple.0), point,"
+      return "\(string1) \(secondUnit(distanceTuple.1)), \(unitSystemString), completed"
+    }
+  }
+
+  private func secondUnit(_ second:Int) -> Int {
+    if second < 10 {
+      return 0
+    } else {
+      return Int(Double(second) / 10.0)
     }
   }
 

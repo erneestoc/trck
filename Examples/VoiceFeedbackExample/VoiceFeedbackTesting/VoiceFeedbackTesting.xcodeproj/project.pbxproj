@@ -16,6 +16,7 @@
 		94167F37202A360B004E0446 /* TrckEnglishFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94167F35202A360B004E0446 /* TrckEnglishFeedback.swift */; };
 		94167F39202A3661004E0446 /* TrckSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94167F38202A3661004E0446 /* TrckSetup.swift */; };
 		94167F3B202A392C004E0446 /* TrckTypesAndHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94167F3A202A392C004E0446 /* TrckTypesAndHelpers.swift */; };
+		9475D73D202A63B9007BB3EA /* TrckSpeaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D73C202A63B9007BB3EA /* TrckSpeaker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		94167F35202A360B004E0446 /* TrckEnglishFeedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrckEnglishFeedback.swift; path = ../../../../Sources/Trck/languages/TrckEnglishFeedback.swift; sourceTree = "<group>"; };
 		94167F38202A3661004E0446 /* TrckSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrckSetup.swift; path = ../../../../Sources/Trck/TrckSetup.swift; sourceTree = "<group>"; };
 		94167F3A202A392C004E0446 /* TrckTypesAndHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrckTypesAndHelpers.swift; path = ../../../../Sources/Trck/TrckTypesAndHelpers.swift; sourceTree = "<group>"; };
+		9475D73C202A63B9007BB3EA /* TrckSpeaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrckSpeaker.swift; path = ../../../../Sources/Trck/languages/TrckSpeaker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				94167F21202A3076004E0446 /* ViewController.swift */,
 				94167F38202A3661004E0446 /* TrckSetup.swift */,
 				94167F3A202A392C004E0446 /* TrckTypesAndHelpers.swift */,
+				9475D73C202A63B9007BB3EA /* TrckSpeaker.swift */,
 				94167F35202A360B004E0446 /* TrckEnglishFeedback.swift */,
 				94167F34202A360B004E0446 /* TrckFeedbackProtocol.swift */,
 				94167F23202A3076004E0446 /* Main.storyboard */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9475D73D202A63B9007BB3EA /* TrckSpeaker.swift in Sources */,
 				94167F22202A3076004E0446 /* ViewController.swift in Sources */,
 				94167F36202A360B004E0446 /* TrckFeedbackProtocol.swift in Sources */,
 				94167F20202A3076004E0446 /* AppDelegate.swift in Sources */,

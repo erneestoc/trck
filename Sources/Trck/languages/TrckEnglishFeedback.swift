@@ -6,9 +6,9 @@ class TrckEnglishFeedback {
 }
 
 extension TrckEnglishFeedback: TrckFeedbackProtocol {
-  
+
   func goalCompletedFeedbackFor(distance:Double, time:Int, pace:Double) -> String {
-    return "GOAL, COMPLETED!, \(distanceString(distance)), completed, \(timeString(time)), \(paceString(pace))"
+    return "GOAL, COMPLETED!, \(feedbackFor(distance: distance, time: time, pace: pace))"
   }
 
   func feedbackFor(distance:Double, time:Int, pace:Double) -> String {

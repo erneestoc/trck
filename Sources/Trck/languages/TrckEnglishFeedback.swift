@@ -6,32 +6,37 @@ class TrckEnglishFeedback {
 }
 
 extension TrckEnglishFeedback: TrckFeedbackProtocol {
+  
+  func goalCompletedFeedbackFor(distance:Double, time:Int, pace:Double) -> String {
+    return "GOAL, COMPLETED!, \(distanceString(distance)), completed, \(timeString(time)), \(paceString(pace))"
+  }
+
   func feedbackFor(distance:Double, time:Int, pace:Double) -> String {
-    return "\(distanceString(distance)), \(timeString(time)), \(paceString(pace))"
+    return "\(distanceString(distance)), completed, \(timeString(time)), \(paceString(pace))"
   }
 
   func descendingFeedbackFor(distance:Double, time:Int, pace:Double) -> String {
-    return ""
+    return "\(distanceString(distance)), to go, \(timeString(time)), \(paceString(pace))"
   }
 
   private func distanceString(_ distance:Double) -> String {
     let distanceTuple = convertDistanceToDistanceTuple(distance, unitSystem: setup.unitSystem)
     if distanceTuple.0 == 0 && distanceTuple.1 == 0 {
       let unitSystemString = pluralUnitSystemString(setup.unitSystem)
-      return "distance, zero, point, zero, \(unitSystemString), completed"
+      return "distance, zero, point, zero, \(unitSystemString)"
     } else if distanceTuple.0 == 1 && distanceTuple.1 == 0 {
       let unitSystemString = setup.unitSystem == .metric ? "kilometer" : "mile"
-      return "distance, \(distanceTuple.0), \(unitSystemString), completed"
+      return "distance, \(distanceTuple.0), \(unitSystemString)"
     } else if distanceTuple.0 == 0 && distanceTuple.1 != 0 {
       let unitSystemString = pluralUnitSystemString(setup.unitSystem)
-      return "distance, point, \(secondUnit(distanceTuple.1)), \(unitSystemString), completed"
+      return "distance, point, \(secondUnit(distanceTuple.1)), \(unitSystemString)"
     } else if distanceTuple.0 != 0 && distanceTuple.1 == 0 {
       let unitSystemString = pluralUnitSystemString(setup.unitSystem)
-      return "distance, \(distanceTuple.0), \(unitSystemString), completed"
+      return "distance, \(distanceTuple.0), \(unitSystemString)"
     } else {
       let unitSystemString = pluralUnitSystemString(setup.unitSystem)
       let string1 = "distance, \(distanceTuple.0), point,"
-      return "\(string1) \(secondUnit(distanceTuple.1)), \(unitSystemString), completed"
+      return "\(string1) \(secondUnit(distanceTuple.1)), \(unitSystemString)"
     }
   }
 

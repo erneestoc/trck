@@ -71,7 +71,4 @@ class Trck {
     return (trackingData, feedback.feedbackFor(distance: trackingData.3, time:trackingData.2))
   }
 
-  private func tick(_ time:Event<TrackingData?>) {
-    // print(time)
-  }
 }

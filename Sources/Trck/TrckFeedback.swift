@@ -5,6 +5,8 @@ class TrckFeedback {
 
   private var nextFeedbackDistance = 0.0
   private var nextFeedbackTime = 0
+  private var reachedMidpoint = false
+  private var reachedGoal = false
 
   init(setup:TrckSetup) {
     self.setup = setup
@@ -39,7 +41,28 @@ class TrckFeedback {
   }
 
   private func distanceFeedback(distance:Double, time:Int) -> String? {
-    return nil
+    if !reachedGoal && distance >= setup.distance {
+      reachedGoal = true
+      if distance >= nextFeedbackDistance {
+        setupNextFeedbackFor(setup)
+      }
+      return language.goalCompletedFeedbackFor(distance: distance, time: time, pace: Double(time) / distance)
+    } else if !reachedMidpoint && distance >= (setup.distance / 2) {
+      reachedMidpoint = true
+      if distance >= nextFeedbackDistance {
+        setupNextFeedbackFor(setup)
+      }
+      return language.descendingFeedbackFor(distance: setup.distance - distance, time: time, pace: Double(time) / distance)
+    } else if distance >= nextFeedbackDistance {
+      setupNextFeedbackFor(setup)
+      if reachedMidpoint && !reachedGoal {
+        return language.descendingFeedbackFor(distance: setup.distance - distance, time: time, pace: Double(time) / distance)
+      } else {
+        return language.feedbackFor(distance: distance, time: time, pace: Double(time) / distance)
+      }
+    } else {
+      return nil
+    }
   }
 
   private func timeFeedback(distance:Double, time:Int) -> String? {

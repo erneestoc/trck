@@ -52,11 +52,15 @@ class TrckFeedback {
       if distance >= nextFeedbackDistance {
         setupNextFeedbackFor(setup)
       }
-      return language.descendingFeedbackFor(distance: setup.distance - distance, time: time, pace: Double(time) / distance)
+      let pace = Double(time) / distance
+      let distance = setup.distance - distance
+      return language.descendingFeedbackFor(distance: distance, time: time, pace: pace)
     } else if distance >= nextFeedbackDistance {
       setupNextFeedbackFor(setup)
       if reachedMidpoint && !reachedGoal {
-        return language.descendingFeedbackFor(distance: setup.distance - distance, time: time, pace: Double(time) / distance)
+        let pace = Double(time) / distance
+        let distance = setup.distance - distance
+        return language.descendingFeedbackFor(distance: distance, time: time, pace: pace)
       } else {
         return language.feedbackFor(distance: distance, time: time, pace: Double(time) / distance)
       }

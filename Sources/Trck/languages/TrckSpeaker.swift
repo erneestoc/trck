@@ -1,3 +1,4 @@
+#if !TEST
 import AVFoundation
 
 class TrckSpeaker:NSObject {
@@ -71,3 +72,4 @@ extension TrckSpeaker: AVSpeechSynthesizerDelegate {
     }
   }
 }
+#endif

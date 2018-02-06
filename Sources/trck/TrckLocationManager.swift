@@ -1,26 +1,23 @@
 import CoreLocation
+#if TEST
 import SWXMLHash
+#endif
 
 class TrckLocationManager:NSObject {
 
   typealias TrckLocation = (Int) -> CLLocation?
   private var locationLambda:TrckLocation?
   private var date = Date()
-  init(_ fakeData:Bool) {
+  init(_ fakeData:Bool = false) {
     super.init()
     if fakeData {
-      locationLambda = { [unowned self] time in
-        let date1 = self.date.addingTimeInterval(Double(time))
-        for (date2, lat, lon) in self.fakeTrack where date2 >= date1 {
-          self.current = CLLocation(latitude: lat, longitude: lon)
-          return self.current
-        }
-        return self.current
-      }
+#if TEST
+      locationLambda = fakeDataLambda()
+#else
+      locationLambda = regularLambda()
+#endif
     } else {
-      locationLambda = { [unowned self] _ in
-        return self.current
-      }
+      locationLambda = regularLambda()
     }
   }
 
@@ -39,6 +36,24 @@ class TrckLocationManager:NSObject {
 
   public func currentLocation(_ time:Int) -> CLLocation? {
     return locationLambda!(time)
+  }
+
+  private func regularLambda() -> TrckLocation {
+    return { [unowned self] _ in
+      return self.current
+    }
+  }
+
+#if TEST
+  func fakeDataLambda() -> TrckLocation {
+    return { [unowned self] time in
+      let date1 = self.date.addingTimeInterval(Double(time))
+      for (date2, lat, lon) in self.fakeTrack where date2 >= date1 {
+        self.current = CLLocation(latitude: lat, longitude: lon)
+        return self.current
+      }
+      return self.current
+    }
   }
 
   private var fakeTrack = [(Date, Double, Double)]()
@@ -61,7 +76,7 @@ class TrckLocationManager:NSObject {
     }
     date = fakeTrack[0].0
   }
-
+#endif
 }
 
 extension TrckLocationManager:CLLocationManagerDelegate {

@@ -6,4 +6,3 @@ xcode_sdk: iphonesimulator10.0
 
 script:
   - swift test -Xswiftc -DTEST -Xswiftc -DCI
-  - travis_retry xcodebuild -project Examples/TrckTesting/TrckTesting/TrckTesting.xcodeproj -scheme "TrckTesting" -destination "platform=iOS Simulator,name=iPhone 6" test

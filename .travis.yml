@@ -5,4 +5,4 @@ osx_image: xcode9
 xcode_sdk: iphonesimulator10.0
 
 script:
-  - swift test -Xswiftc -DTEST -Xswiftc -DCI
+  xcodebuild -project Trck.xcodeproj -scheme "Trck-Package" -destination "platform=iOS Simulator,name=iPhone 6" build-for-testing test

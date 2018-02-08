@@ -1,7 +1,5 @@
 import CoreLocation
-#if TEST
 import SWXMLHash
-#endif
 
 class TrckLocationManager:NSObject {
 
@@ -11,11 +9,7 @@ class TrckLocationManager:NSObject {
   init(_ fakeData:Bool = false) {
     super.init()
     if fakeData {
-#if TEST
       locationLambda = fakeDataLambda()
-#else
-      locationLambda = regularLambda()
-#endif
     } else {
       locationLambda = regularLambda()
     }
@@ -44,7 +38,6 @@ class TrckLocationManager:NSObject {
     }
   }
 
-#if TEST
   func fakeDataLambda() -> TrckLocation {
     return { [unowned self] time in
       let date1 = self.date.addingTimeInterval(Double(time))
@@ -76,7 +69,6 @@ class TrckLocationManager:NSObject {
     }
     date = fakeTrack[0].0
   }
-#endif
 }
 
 extension TrckLocationManager:CLLocationManagerDelegate {

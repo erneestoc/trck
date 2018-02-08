@@ -25,10 +25,10 @@ class TrckLocationManagerTests: XCTestCase {
   ]
 
   private func loadGPX() -> NSString {
-    let fileManager = FileManager.default
-    let path = "\(fileManager.currentDirectoryPath)/Tests/trckTests/gpx/"
+    let bundle = Bundle(for: type(of: self))
+    let path = bundle.path(forResource: "Stirling_Marathon_Rough", ofType: "gpx")!
     do {
-      return try NSString(contentsOfFile: "\(path)/Stirling_Marathon_Rough.gpx", encoding: 4)
+      return try NSString(contentsOfFile: path, encoding: 4)
     } catch {
       return ""
     }

@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
           "branch": null,
-          "revision": "e479d0029db0575e03e3c092e1c9724b9410eab7",
-          "version": "4.1.1"
+          "revision": "3e848781c7756accced855a6317a4c2ff5e8588b",
+          "version": "4.1.2"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/drmohundro/SWXMLHash.git",
         "state": {
           "branch": null,
-          "revision": "4e7f5af6331735d39fc357b2c71c3bb15af97c8f",
-          "version": "4.3.6"
+          "revision": "30a13aa7ef6bb564a23399692531325117748c38",
+          "version": "4.4.1"
         }
       }
     ]

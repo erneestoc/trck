@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		94310742202CDA3E00824A4A /* Stirling_Marathon_Rough.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9431073F202CD3F800824A4A /* Stirling_Marathon_Rough.gpx */; };
 		OBJ_212 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_218 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* Package.swift */; };
 		OBJ_224 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_200 /* Package.swift */; };
@@ -270,6 +271,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9431073F202CD3F800824A4A /* Stirling_Marathon_Rough.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Stirling_Marathon_Rough.gpx; path = gpx/Stirling_Marathon_Rough.gpx; sourceTree = "<group>"; };
 		OBJ_10 /* TrckFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrckFeedback.swift; sourceTree = "<group>"; };
 		OBJ_100 /* Maybe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maybe.swift; sourceTree = "<group>"; };
 		OBJ_101 /* Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Merge.swift; sourceTree = "<group>"; };
@@ -454,7 +456,7 @@
 		"RxSwift::RxTest::Product" /* RxTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"SWXMLHash::SWXMLHash::Product" /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Trck::Trck::Product" /* Trck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Trck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"Trck::TrckTests::Product" /* TrckTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = TrckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Trck::TrckTests::Product" /* TrckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = TrckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +565,7 @@
 		OBJ_19 /* TrckTests */ = {
 			isa = PBXGroup;
 			children = (
+				9431073F202CD3F800824A4A /* Stirling_Marathon_Rough.gpx */,
 				OBJ_20 /* TrckFeedbackEnglishTests.swift */,
 				OBJ_21 /* TrckLocationManagerTests.swift */,
 				OBJ_22 /* TrckTests.swift */,
@@ -942,6 +945,7 @@
 			buildPhases = (
 				OBJ_229 /* Sources */,
 				OBJ_234 /* Frameworks */,
+				94310741202CDA3900824A4A /* Resources */,
 			);
 			buildRules = (
 			);
@@ -988,6 +992,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94310741202CDA3900824A4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94310742202CDA3E00824A4A /* Stirling_Marathon_Rough.gpx in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_211 /* Sources */ = {

@@ -926,7 +926,6 @@
 			buildPhases = (
 				OBJ_272 /* Sources */,
 				OBJ_281 /* Frameworks */,
-				94310771202CE4FF00824A4A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1006,19 +1005,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		94310771202CE4FF00824A4A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
 		94310772202CE51100824A4A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94310759202CDC7800824A4A /* Trck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94310754202CDBFE00824A4A /* Trck.framework */; };
+		9431075A202CDC7800824A4A /* Trck.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94310754202CDBFE00824A4A /* Trck.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9431075E202CDC8200824A4A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94310758202CDBFE00824A4A /* RxSwift.framework */; };
+		9431075F202CDC8200824A4A /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94310758202CDBFE00824A4A /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94310762202CDD3E00824A4A /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94310756202CDBFE00824A4A /* SWXMLHash.framework */; };
+		94310763202CDD3E00824A4A /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 94310756202CDBFE00824A4A /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94310767202CDEF400824A4A /* TrckPickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94310766202CDEF400824A4A /* TrckPickerData.swift */; };
+		9431076A202CE1F300824A4A /* TrckPickerDataDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94310769202CE1F300824A4A /* TrckPickerDataDistance.swift */; };
+		9431076C202CE22500824A4A /* TrckPickerDataTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431076B202CE22500824A4A /* TrckPickerDataTime.swift */; };
+		9431076E202CE24100824A4A /* TrckPickerDataPace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431076D202CE24100824A4A /* TrckPickerDataPace.swift */; };
+		9431077C202E0B3800824A4A /* FeedbackSettingsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9431077B202E0B3800824A4A /* FeedbackSettingsSegue.swift */; };
 		945CD245202B6491004F1383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD244202B6491004F1383 /* AppDelegate.swift */; };
 		945CD247202B6491004F1383 /* TrckTypePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945CD246202B6491004F1383 /* TrckTypePickerViewController.swift */; };
 		945CD24A202B6491004F1383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945CD248202B6491004F1383 /* Main.storyboard */; };
@@ -21,6 +32,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9431074F202CDBFE00824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "Trck::TrckTests::Product";
+			remoteInfo = TrckTests;
+		};
+		94310751202CDBFE00824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "RxSwift::RxTest::Product";
+			remoteInfo = RxTest;
+		};
+		94310753202CDBFE00824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "Trck::Trck::Product";
+			remoteInfo = Trck;
+		};
+		94310755202CDBFE00824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "SWXMLHash::SWXMLHash::Product";
+			remoteInfo = SWXMLHash;
+		};
+		94310757202CDBFE00824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = "RxSwift::RxSwift::Product";
+			remoteInfo = RxSwift;
+		};
+		9431075B202CDC7800824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "Trck::Trck";
+			remoteInfo = Trck;
+		};
+		94310760202CDC8200824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "RxSwift::RxSwift";
+			remoteInfo = RxSwift;
+		};
+		94310764202CDD3E00824A4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = "SWXMLHash::SWXMLHash";
+			remoteInfo = SWXMLHash;
+		};
 		945CD256202B6492004F1383 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 945CD239202B6491004F1383 /* Project object */;
@@ -37,7 +104,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9431075D202CDC7800824A4A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9431075F202CDC8200824A4A /* RxSwift.framework in Embed Frameworks */,
+				9431075A202CDC7800824A4A /* Trck.framework in Embed Frameworks */,
+				94310763202CDD3E00824A4A /* SWXMLHash.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		94310743202CDBFE00824A4A /* Trck.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Trck.xcodeproj; path = ../../../Trck.xcodeproj; sourceTree = "<group>"; };
+		94310766202CDEF400824A4A /* TrckPickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrckPickerData.swift; sourceTree = "<group>"; };
+		94310769202CE1F300824A4A /* TrckPickerDataDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrckPickerDataDistance.swift; sourceTree = "<group>"; };
+		9431076B202CE22500824A4A /* TrckPickerDataTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrckPickerDataTime.swift; sourceTree = "<group>"; };
+		9431076D202CE24100824A4A /* TrckPickerDataPace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrckPickerDataPace.swift; sourceTree = "<group>"; };
+		9431077B202E0B3800824A4A /* FeedbackSettingsSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSettingsSegue.swift; sourceTree = "<group>"; };
 		945CD241202B6491004F1383 /* TrckTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrckTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945CD244202B6491004F1383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		945CD246202B6491004F1383 /* TrckTypePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrckTypePickerViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +151,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9431075E202CDC8200824A4A /* RxSwift.framework in Frameworks */,
+				94310759202CDC7800824A4A /* Trck.framework in Frameworks */,
+				94310762202CDD3E00824A4A /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +174,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94310744202CDBFE00824A4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				94310750202CDBFE00824A4A /* TrckTests.xctest */,
+				94310752202CDBFE00824A4A /* RxTest.framework */,
+				94310754202CDBFE00824A4A /* Trck.framework */,
+				94310756202CDBFE00824A4A /* SWXMLHash.framework */,
+				94310758202CDBFE00824A4A /* RxSwift.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94310768202CE18C00824A4A /* TrckPickerViewDelegatesAndDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				94310766202CDEF400824A4A /* TrckPickerData.swift */,
+				94310769202CE1F300824A4A /* TrckPickerDataDistance.swift */,
+				9431076B202CE22500824A4A /* TrckPickerDataTime.swift */,
+				9431076D202CE24100824A4A /* TrckPickerDataPace.swift */,
+			);
+			path = TrckPickerViewDelegatesAndDataSources;
+			sourceTree = "<group>";
+		};
 		945CD238202B6491004F1383 = {
 			isa = PBXGroup;
 			children = (
+				94310743202CDBFE00824A4A /* Trck.xcodeproj */,
 				945CD243202B6491004F1383 /* TrckTesting */,
 				945CD258202B6492004F1383 /* TrckTestingTests */,
 				945CD263202B6492004F1383 /* TrckTestingUITests */,
@@ -139,7 +255,10 @@
 		945CD27A202BCD9C004F1383 /* TrckingTypePicker */ = {
 			isa = PBXGroup;
 			children = (
+				94310768202CE18C00824A4A /* TrckPickerViewDelegatesAndDataSources */,
 				945CD246202B6491004F1383 /* TrckTypePickerViewController.swift */,
+				9431077B202E0B3800824A4A /* FeedbackSettingsSegue.swift */,
+				945CD278202B6BCF004F1383 /* TrckingSetupSegue.swift */,
 			);
 			path = TrckingTypePicker;
 			sourceTree = "<group>";
@@ -147,7 +266,6 @@
 		945CD27B202BCDBF004F1383 /* Trcking */ = {
 			isa = PBXGroup;
 			children = (
-				945CD278202B6BCF004F1383 /* TrckingSetupSegue.swift */,
 				945CD272202B66B2004F1383 /* TrckingViewController.swift */,
 			);
 			path = Trcking;
@@ -179,10 +297,14 @@
 				945CD23D202B6491004F1383 /* Sources */,
 				945CD23E202B6491004F1383 /* Frameworks */,
 				945CD23F202B6491004F1383 /* Resources */,
+				9431075D202CDC7800824A4A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9431075C202CDC7800824A4A /* PBXTargetDependency */,
+				94310761202CDC8200824A4A /* PBXTargetDependency */,
+				94310765202CDD3E00824A4A /* PBXTargetDependency */,
 			);
 			name = TrckTesting;
 			productName = TrckTesting;
@@ -262,6 +384,12 @@
 			mainGroup = 945CD238202B6491004F1383;
 			productRefGroup = 945CD242202B6491004F1383 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 94310744202CDBFE00824A4A /* Products */;
+					ProjectRef = 94310743202CDBFE00824A4A /* Trck.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				945CD240202B6491004F1383 /* TrckTesting */,
@@ -270,6 +398,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		94310750202CDBFE00824A4A /* TrckTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TrckTests.xctest;
+			remoteRef = 9431074F202CDBFE00824A4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		94310752202CDBFE00824A4A /* RxTest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTest.framework;
+			remoteRef = 94310751202CDBFE00824A4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		94310754202CDBFE00824A4A /* Trck.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Trck.framework;
+			remoteRef = 94310753202CDBFE00824A4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		94310756202CDBFE00824A4A /* SWXMLHash.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SWXMLHash.framework;
+			remoteRef = 94310755202CDBFE00824A4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		94310758202CDBFE00824A4A /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = 94310757202CDBFE00824A4A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		945CD23F202B6491004F1383 /* Resources */ = {
@@ -303,11 +469,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9431077C202E0B3800824A4A /* FeedbackSettingsSegue.swift in Sources */,
+				94310767202CDEF400824A4A /* TrckPickerData.swift in Sources */,
 				945CD275202B671C004F1383 /* FeedbackSettingsViewController.swift in Sources */,
 				945CD273202B66B2004F1383 /* TrckingViewController.swift in Sources */,
 				945CD279202B6BCF004F1383 /* TrckingSetupSegue.swift in Sources */,
 				945CD247202B6491004F1383 /* TrckTypePickerViewController.swift in Sources */,
 				945CD277202B6730004F1383 /* TrckSummaryViewController.swift in Sources */,
+				9431076C202CE22500824A4A /* TrckPickerDataTime.swift in Sources */,
+				9431076A202CE1F300824A4A /* TrckPickerDataDistance.swift in Sources */,
+				9431076E202CE24100824A4A /* TrckPickerDataPace.swift in Sources */,
 				945CD245202B6491004F1383 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +502,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9431075C202CDC7800824A4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Trck;
+			targetProxy = 9431075B202CDC7800824A4A /* PBXContainerItemProxy */;
+		};
+		94310761202CDC8200824A4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RxSwift;
+			targetProxy = 94310760202CDC8200824A4A /* PBXContainerItemProxy */;
+		};
+		94310765202CDD3E00824A4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SWXMLHash;
+			targetProxy = 94310764202CDD3E00824A4A /* PBXContainerItemProxy */;
+		};
 		945CD257202B6492004F1383 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 945CD240202B6491004F1383 /* TrckTesting */;
@@ -473,6 +659,7 @@
 		945CD26A202B6492004F1383 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZR7QP47L9B;
@@ -488,6 +675,7 @@
 		945CD26B202B6492004F1383 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZR7QP47L9B;

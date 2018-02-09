@@ -57,6 +57,9 @@
                                 <rect key="frame" x="164" y="577" width="46" height="30"/>
                                 <color key="tintColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="clickedVoiceFeedbackSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b41-ZK-yED"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
@@ -76,8 +79,8 @@
                     <connections>
                         <outlet property="pickerView" destination="E9d-Ve-0X1" id="tiQ-w5-erb"/>
                         <outlet property="voiceFeedbackButton" destination="f4v-Zm-nzJ" id="tPE-qX-4h5"/>
-                        <segue destination="NrK-El-AEc" kind="presentation" id="F7K-fk-adD"/>
                         <segue destination="MJr-oX-Eum" kind="custom" customClass="TrckingSetupSegue" customModule="TrckTesting" customModuleProvider="target" id="dAL-gs-qqb"/>
+                        <segue destination="NrK-El-AEc" kind="custom" identifier="kFeedbackSettingsSegue" customClass="FeedbackSettingsSegue" customModule="TrckTesting" customModuleProvider="target" id="T9L-yy-feI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,7 +111,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cf4-4v-Pa3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5DH-ak-AxX">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -127,6 +130,7 @@
                     <navigationItem key="navigationItem" id="KKs-pJ-ugf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8a-lu-deb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Title" id="vJV-uy-2yr"/>
             </objects>
             <point key="canvasLocation" x="84" y="795"/>
         </scene>

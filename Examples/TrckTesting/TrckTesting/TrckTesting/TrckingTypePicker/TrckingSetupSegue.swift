@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Trck
 
 class TrckingSetupSegue:UIStoryboardSegue {
   override func perform() {
@@ -14,9 +15,16 @@ class TrckingSetupSegue:UIStoryboardSegue {
           let destination = destination as? TrckingViewController else {return}
 
     let defaults = UserDefaults.standard
-    _ = defaults.integer(forKey: "feedbackType")
-    _ = defaults.integer(forKey: "feedbackValue")
+    let unitSystem:TrckUnitSystem = defaults.bool(forKey: "unitSystem") ? .metric : .royal
+    let feedbackType = defaults.integer(forKey: "feedbackType")
+    let feedbackValue = defaults.integer(forKey: "feedbackValue")
 
+    let setup = TrckSetup(unitSystem: unitSystem,
+                          voiceFeedback: .regular,
+                          halfsUnits: 0,
+                          distance: 0.0,
+                          time: 0)
+    destination.trck = Trck(setup: setup)
     source.present(destination, animated: true, completion: nil)
   }
 }

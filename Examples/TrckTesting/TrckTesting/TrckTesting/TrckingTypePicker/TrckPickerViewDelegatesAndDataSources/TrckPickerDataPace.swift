@@ -9,14 +9,14 @@
 import UIKit
 
 class TrckPickerDataPace: TrckPickerData {
-  
+
   private var paces = [(String, Double)]()
   private var distances = [(String, Double)]()
   override func numberOfComponents(in pickerView: UIPickerView) -> Int {
     reloadData()
     return 3
   }
-  
+
   override func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     if component <= 1 {
       return paces.count
@@ -24,7 +24,7 @@ class TrckPickerDataPace: TrckPickerData {
       return distances.count
     }
   }
-  
+
   func pickerView(_ pickerView: UIPickerView,
                   titleForRow rowNumber: Int,
                   forComponent component: Int) -> String? {
@@ -34,7 +34,7 @@ class TrckPickerDataPace: TrckPickerData {
       return distances[rowNumber].0
     }
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, didSelectRow rowNumber: Int, inComponent component: Int) {
     switch component {
     case 0: UserDefaults.standard.set(paces[rowNumber].1, forKey: "paceGoal1")
@@ -42,17 +42,15 @@ class TrckPickerDataPace: TrckPickerData {
     default: UserDefaults.standard.set(paces[rowNumber].1, forKey: "paceGoalDistance")
     }
   }
-  
+
   private func reloadData() {
     let unitSystem = UserDefaults.standard.bool(forKey: "unitSystem")
     let multiplier = unitSystem ? 1.0 : 1.609
     for minutes in 4...10 {
-      for seconds in 10...50 {
-        if seconds % 10 == 0 {
-          let totalSeconds = (minutes * 60) + seconds
-          let speed = Double(totalSeconds) / (1000.0 * multiplier)
-          paces.append(("\(minutes)'\(seconds)\"", speed))
-        }
+      for seconds in 10...50 where seconds % 10 == 0 {
+        let totalSeconds = (minutes * 60) + seconds
+        let speed = Double(totalSeconds) / (1000.0 * multiplier)
+        paces.append(("\(minutes)'\(seconds)\"", speed))
       }
     }
     if unitSystem {
@@ -66,7 +64,6 @@ class TrckPickerDataPace: TrckPickerData {
         distances.append(("\(d) yards", distance))
       }
     }
-      
+
   }
 }
-

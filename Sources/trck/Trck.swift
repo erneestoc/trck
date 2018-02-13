@@ -1,9 +1,9 @@
 import CoreLocation
 import RxSwift
 
-typealias TrackingData = (location:CLLocation, speed:Double, time:Int, distance:Double)
+public typealias TrackingData = (location:CLLocation, speed:Double, time:Int, distance:Double)
 
-class Trck {
+public class Trck {
   private let setup:TrckSetup
   private var time = 0
   private var distance = 0.0
@@ -20,12 +20,12 @@ class Trck {
 
   private let feedback:TrckFeedback
 
-  init(setup:TrckSetup, scheduler: SchedulerType = MainScheduler.instance) {
+  public init(setup:TrckSetup, scheduler: SchedulerType = MainScheduler.instance) {
     self.scheduler = scheduler
     self.setup = setup
     self.feedback = TrckFeedback(setup: self.setup)
   }
-  init(scheduler: SchedulerType = MainScheduler.instance) {
+  public init(scheduler: SchedulerType = MainScheduler.instance) {
     self.scheduler = scheduler
     self.setup = TrckSetup()
     self.feedback = TrckFeedback(setup: self.setup)

@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import Trck
 
 class TrckingViewController:UIViewController {
-
+  var trck:Trck?
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 }

@@ -13,18 +13,18 @@ class TrckPickerDataTime: TrckPickerData {
   override func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
   }
-  
+
   override func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     reloadData()
     return time.count
   }
-  
+
   func pickerView(_ pickerView: UIPickerView,
                   titleForRow rowNumber: Int,
                   forComponent component: Int) -> String? {
     return time[rowNumber].0
   }
-  
+
   func pickerView(_ pickerView: UIPickerView,
                   didSelectRow rowNumber: Int,
                   inComponent component: Int) {
@@ -33,10 +33,8 @@ class TrckPickerDataTime: TrckPickerData {
 
   private func reloadData() {
     time = [(String, Int)]()
-    for i in 1...100 {
-      if i % 2 == 0 {
-        time.append(("\(Int(i / 2)):00 mins", i))
-      }
+    for i in 1...100 where i % 2 == 0 {
+      time.append(("\(Int(i / 2)):00 mins", i))
     }
   }
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-enum TrckType {
+public enum TrckType {
   case regular
   case distance
   case time
@@ -8,7 +8,7 @@ enum TrckType {
   case nofeedback
 }
 
-struct TrckSetup {
+public struct TrckSetup {
   let unitSystem:TrckUnitSystem
   let voiceFeedback:TrckType
 
@@ -18,7 +18,7 @@ struct TrckSetup {
   let time:Int
   let language:String
 
-  init() {
+  public init() {
     unitSystem = .metric
     voiceFeedback = .nofeedback
     distance = 0.0
@@ -27,12 +27,12 @@ struct TrckSetup {
     language = Locale.current.languageCode ?? ""
   }
 
-  init(unitSystem:TrckUnitSystem,
-       voiceFeedback:TrckType,
-       halfsUnits:Int = 0,
-       distance:Double = 0.0,
-       time:Int = 0,
-       language:String? = Locale.current.languageCode) {
+  public init(unitSystem:TrckUnitSystem,
+              voiceFeedback:TrckType,
+              halfsUnits:Int = 0,
+              distance:Double = 0.0,
+              time:Int = 0,
+              language:String? = Locale.current.languageCode) {
     self.unitSystem = unitSystem
     self.voiceFeedback = voiceFeedback
     self.distance = distance
